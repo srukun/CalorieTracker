@@ -1,0 +1,60 @@
+﻿<Page x:Class="CalorieTracker.ExerciseTrackerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CalorieTracker"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="ExerciseTrackerPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" >
+            <Button Name="ETP_BTNPrevTracker" Content="Previous" Width="75" BorderThickness="0" Foreground="White" Background="#51A8FA" Click="ETP_BTNPrevTracker_Click"/>
+            <Label Foreground="#603102" Content="8/20/2022" FontFamily="Roboto" FontSize="14" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,10,0"></Label>
+            <Button Name="ETP_BTNNextTracker" Content="Next" Width="75" BorderThickness="0" Foreground="White" Background="#51A8FA" Click="ETP_BTNNextTracker_Click"/>
+        </StackPanel>
+        
+        
+        <StackPanel Grid.Column="1" Grid.Row="1" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                <StackPanel Margin="0,0,50,0" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                    <Label Name="ETP_LBCalorieBurntDisplay" Foreground="#603102" Content="1100" FontFamily="Roboto" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+                    <Label Foreground="#603102" Content="Calories Burnt" FontFamily="Roboto" FontSize="14" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Margin="50,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                    <Label Name="ETP_LBDurationDisplay" Foreground="#603102" Content="60" FontFamily="Roboto" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+                    <Label Foreground="#603102" Content="Duration" FontFamily="Roboto" FontSize="14" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+
+            </StackPanel>
+            <StackPanel Name="ETP_SPExerciseLabelList">
+                <Label Content="You have not added any Exercises yet. Click &quot;Add Exercise&quot; to start." Foreground="#716F78" Background="#EFEBFD" FontFamily="Roboto" HorizontalContentAlignment="Center" Margin="0,25,0,0"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="ETP_TBExerciseName" Visibility="Collapsed" Text="Exercise Name" Background="#F2F0F7" Foreground="#716F78" BorderBrush="#06D8A1" BorderThickness="0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200" Height="30" Margin="0,10,0,0" GotFocus="ETP_TBExerciseName_GotFocus" LostFocus="ETP_TBExerciseName_LostFocus"/>
+            <TextBox x:Name="ETP_TBExerciseCaloriesBurnt" Visibility="Collapsed" Text="Calories Burnt" Background="#F2F0F7" Foreground="#716F78" BorderBrush="#06D8A1" BorderThickness="0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200" Height="30" Margin="0,10,0,0" GotFocus="ETP_TBExerciseCaloriesBurnt_GotFocus" LostFocus="ETP_TBExerciseCaloriesBurnt_LostFocus"/>
+            <TextBox x:Name="ETP_TBExerciseDurationMinutes" Visibility="Collapsed" Text="Exercise Duration(Minutes)" Background="#F2F0F7" Foreground="#716F78" BorderBrush="#06D8A1" BorderThickness="0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200" Height="30" Margin="0,10,0,0" LostFocus="ETP_TBExerciseDurationMinutes_LostFocus" GotFocus="ETP_TBExerciseDurationMinutes_GotFocus"/>
+            <TextBox x:Name="ETP_TBExerciseDurationSeconds" Visibility="Collapsed" Text="Exercise Duration(Seconds)" Background="#F2F0F7" Foreground="#716F78" BorderBrush="#06D8A1" BorderThickness="0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200" Height="30" Margin="0,10,0,0" GotFocus="ETP_TBExerciseDurationSeconds_GotFocus" LostFocus="ETP_TBExerciseDurationSeconds_LostFocus"/>
+            <Button Name="ETP_BTNAddExercise" Content="Add Exercise" Width="100" BorderThickness="0" Foreground="White" Background="#51A8FA" Click="ETP_BTNAddExercise_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,1,0,0">
+            <TextBox x:Name="ETP_TBExerciseDeleteItemID" Visibility="Collapsed" Text="Exercise ID" Background="#F2F0F7" Foreground="#716F78" BorderBrush="#06D8A1" BorderThickness="0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200" Height="30" Margin="0,10,0,0" GotFocus="ETP_TBExerciseDeleteItemID_GotFocus" LostFocus="ETP_TBExerciseDeleteItemID_LostFocus"/>
+            <Button Name="ETP_BTNDeleteExercise" Content="Delete Exercise" Width="100" BorderThickness="0" Foreground="White" Background="#51A8FA" Click="ETP_BTNDeleteExercise_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

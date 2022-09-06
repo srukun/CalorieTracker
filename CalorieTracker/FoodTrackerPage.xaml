@@ -1,0 +1,62 @@
+﻿<Page x:Class="CalorieTracker.FoodTrackerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CalorieTracker"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="FoodTrackerPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" >
+            <Button Content="Previous" Width="75" BorderThickness="0" Foreground="White" Background="#51A8FA"/>
+            <Label Foreground="#603102" Content="8/20/2022" FontFamily="Roboto" FontSize="14" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,10,0"></Label>
+            <Button Content="Next" Width="75" BorderThickness="0" Foreground="White" Background="#51A8FA"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.RowSpan="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Label Name="FTP_LBCalorieLeftDisplay" Foreground="#603102" Content="1100" FontFamily="Roboto" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+            <Label Foreground="#603102" Content="Calories Left" FontFamily="Roboto" FontSize="14" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Name="FTP_LBCalorieConsumed" Foreground="#603102" Content="1120 Calories Consumed" FontFamily="Roboto" FontSize="14" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10"></Label>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,25">
+                <Label Name="FTP_LBProteinDisplay" Foreground="#603102" Content="26g Protein" FontFamily="Roboto" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Label Name="FTP_LBCarbDisplay" Foreground="#603102" Content="40g Carbs" FontFamily="Roboto" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Label Name="FTP_LBFatDisplay" Foreground="#603102" Content="12g Fat" FontFamily="Roboto" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,19.6,0"></Label>
+            </StackPanel>
+            <StackPanel Name="FTP_SPFoodLabelList">
+                <Label Content="You have not added any foods yet. Click &quot;Add Food&quot; to see changes here." Foreground="#716F78" Background="#EFEBFD" FontFamily="Roboto" HorizontalContentAlignment="Center" Margin="0,10,0,0"/>
+            </StackPanel>
+            
+
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="FTP_TBFoodName" Visibility="Collapsed" Text="Enter Food Name" Background="#F2F0F7" Foreground="#716F78" BorderBrush="#06D8A1" BorderThickness="0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200" Height="30" LostFocus="FTP_TBFoodName_LostFocus" GotFocus="FTP_TBFoodName_GotFocus" />
+            <TextBox x:Name="FTP_TBFoodCalories" Visibility="Collapsed" Text="Enter Calories" Background="#F2F0F7" Foreground="#716F78" BorderBrush="#06D8A1" BorderThickness="0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200" Height="30" Margin="0,10,0,0" GotFocus="FTP_TBFoodCalories_GotFocus" LostFocus="FTP_TBFoodCalories_LostFocus" />
+            <TextBox x:Name="FTP_TBFoodProtein" Visibility="Collapsed" Text="Enter Protein(g)" Background="#F2F0F7" Foreground="#716F78" BorderBrush="#06D8A1" BorderThickness="0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200" Height="30" Margin="0,10,0,0" GotFocus="FTP_TBFoodProtein_GotFocus" LostFocus="FTP_TBFoodProtein_LostFocus" />
+            <TextBox x:Name="FTP_TBFoodCarbs" Visibility="Collapsed" Text="Enter Carbs(g)" Background="#F2F0F7" Foreground="#716F78" BorderBrush="#06D8A1" BorderThickness="0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200" Height="30" Margin="0,10,0,0" GotFocus="FTP_TBFoodCarbs_GotFocus" LostFocus="FTP_TBFoodCarbs_LostFocus" />
+            <TextBox x:Name="FTP_TBFoodFat" Visibility="Collapsed" Text="Enter Fat(g)" Background="#F2F0F7" Foreground="#716F78" BorderBrush="#06D8A1" BorderThickness="0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200" Height="30" Margin="0,10,0,0" LostFocus="FTP_TBFoodFat_LostFocus" GotFocus="FTP_TBFoodFat_GotFocus" />
+            <Button Name="FTP_BTNAddFood" Content="Add Food" Width="75" BorderThickness="0" Foreground="White" Background="#51A8FA" Click="FTP_BTNAddFood_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="FTP_TBDeleteItemNumber" Visibility="Collapsed" Text="Enter ItemID" Background="#F2F0F7" Foreground="#716F78" BorderBrush="#06D8A1" BorderThickness="0" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200" Height="30" Margin="0,0,5,0" GotFocus="FTP_TBDeleteItemNumber_GotFocus" LostFocus="FTP_TBDeleteItemNumber_LostFocus" />
+            <Button Name="FTP_BTNDeleteFood" Content="Delete Food" Width="75" BorderThickness="0" Foreground="White" Background="#51A8FA" VerticalAlignment="Stretch" Margin="0,0,0,30" Click="FTP_BTNDeleteFood_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

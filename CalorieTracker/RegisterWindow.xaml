@@ -1,0 +1,56 @@
+﻿<Window x:Class="CalorieTracker.RegisterWindow"
+        ResizeMode="NoResize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalorieTracker"
+        mc:Ignorable="d"
+        Title="RegisterWindow" Height="450" Width="800">
+    <Grid x:Name="RW_Grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="2.5*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,20,0">
+            <Label Content="Email" FontSize="10" FontFamily="Roboto" Foreground="#5e5e5e"/>
+            <TextBox x:Name="RW_TBUserEmail" BorderThickness="1" BorderBrush="#73D673" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" Height="30"/>
+            <Label Content="Username" FontSize="10" FontFamily="Roboto" Foreground="#5e5e5e"/>
+            <TextBox x:Name="RW_TBUsername" BorderThickness="1" BorderBrush="#73D673" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" Height="30"/>
+            <Label Content="Password" FontSize="10" FontFamily="Roboto" Foreground="#5e5e5e"/>
+            <PasswordBox x:Name="RW_PBPassword" BorderThickness="1" BorderBrush="#73D673" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="30"/>
+            <Label Content="First Name" FontSize="10" FontFamily="Roboto" Foreground="#5e5e5e"/>
+            <TextBox x:Name="RW_TBFirstName" BorderThickness="1" BorderBrush="#73D673" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" Height="30"/>
+
+        </StackPanel>
+        <StackPanel  Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0">
+            <Label Content="Last Name" FontSize="10" FontFamily="Roboto" Foreground="#5e5e5e"/>
+            <TextBox x:Name="RW_TBLastName" BorderThickness="1" BorderBrush="#73D673" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" Height="30" TextChanged="RW_TBLastName_TextChanged"/>
+            <Label Content="Current Weight" FontSize="10" FontFamily="Roboto" Foreground="#5e5e5e"/>
+            <TextBox x:Name="RW_TBCurrentWeight" BorderThickness="1" BorderBrush="#73D673" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" Height="30"/>
+            <Label Content="Goal Weight" FontSize="10" FontFamily="Roboto" Foreground="#5e5e5e"/>
+            <TextBox x:Name="RW_TBGoalWeight" BorderThickness="1" BorderBrush="#73D673" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" Height="30"/>
+            <Label Content="Daily Calorie Intake" FontSize="10" FontFamily="Roboto" Foreground="#5e5e5e"/>
+            <TextBox x:Name="RW_TBCalorieIntake" BorderThickness="1" BorderBrush="#73D673" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" Height="30"/>
+        </StackPanel>
+        <Button x:Name="RW_BTNRegister" Grid.Column="1" Grid.Row="2" Content="Register" Foreground="White" Background="#51A8FA" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Click="RW_BTNRegister_Click" Height="30"/>
+
+
+
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Already have an account?" FontSize="14" FontFamily="Roboto" Foreground="#5e5e5e" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:Name="RW_LBSignIn" Content="Sign In" BorderThickness="0" Background="Transparent" FontSize="14" FontFamily="Roboto" Foreground="#51A8FA" HorizontalAlignment="Center" VerticalAlignment="Center" Click="RW_LBSignIn_Click"/>
+        </StackPanel>
+        
+
+
+
+    </Grid>
+</Window>
