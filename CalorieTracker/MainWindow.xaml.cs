@@ -83,7 +83,8 @@ namespace CalorieTracker
                         MW_NavPannel.Visibility = Visibility.Visible;
                         MWLogin_SP.Visibility = Visibility.Collapsed;
                         this.HomePage();
-                        
+                        MWLogin_TBUsername.Text = "";
+                        MWLogin_PBPassword.Clear();
 
                     }
                 }
@@ -97,6 +98,16 @@ namespace CalorieTracker
         private void MWLogin_BTNGoToRegisterPage_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new RegisterPage();
+        }
+
+        private void MW_BTNLogout_Click(object sender, RoutedEventArgs e)
+        {
+            DataManager.currentUser = null;
+            Main.Content = new HomePage();
+            Main.Visibility = Visibility.Collapsed;
+            MW_NavPannel.Visibility = Visibility.Collapsed;
+            MWLogin_SP.Visibility = Visibility.Visible;
+
         }
     }
 }
